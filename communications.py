@@ -77,7 +77,14 @@ def skill_msg (i):
 while(1):
     # receive
     data = sock.recv(2)
+    # Karo
+    #data = data.decode()
+    # karo
     data_recv = list(data)
+    #karo
+    #data_recv = list(map(int, data_recv))
+    #karo
+    #print("Recibido: ", data)
     print("Recibido PC: ", data_recv)
     
     
@@ -89,7 +96,7 @@ while(1):
             if cap[i].value:
                 #print("Pin {} touched!".format(i))
                 touch_array[i-1]=cap[i].raw_value
-        print(touch_array)
+        #print(touch_array)
         #         enviar a arduino solicitud de sensores y recepcion
         ard_msg='1'
         ard.write((str(ard_msg)+'\n').encode('utf-8'))
@@ -101,11 +108,17 @@ while(1):
         i=0
         # ard.reset_input_buffer()
         while i < 3:
-            data_ard_rcv = ard.readline().decode("utf-8")       
-            print("test:"+data_ard_rcv)
+          try:
+            data_ard_rcv = ard.readline()
+            #print(data_ard_rcv)
+            data_ard_rcv =data_ard_rcv.decode("utf-8")       
+            print("test2:"+data_ard_rcv)
             ard_rcv[i]= int((data_ard_rcv.split())[0])
-            i = i + 1
-        print(ard_rcv)
+          except ValueError:
+              pass
+          i = i + 1
+          
+        #print(ard_rcv)
         # enviar lectura de sensores a PC
         send_array = ard_rcv + touch_array
         sock.sendall(struct.pack("iiiiiiiiiii", *send_array))
