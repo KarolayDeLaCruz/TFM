@@ -110,19 +110,26 @@ while(1):
         while i < 3:
           try:
             data_ard_rcv = ard.readline()
-            #print(data_ard_rcv)
-            data_ard_rcv =data_ard_rcv.decode("utf-8")       
-            print("test2:"+data_ard_rcv)
+          except:
+            print("No se pudo leer arduino")
+            data_ard_rcv = ""
+
+          if data_ard_rcv:
+            data_ard_rcv =data_ard_rcv .decode("utf-8")       
             ard_rcv[i]= int((data_ard_rcv.split())[0])
-          except ValueError:
-              pass
           i = i + 1
-          
-        #print(ard_rcv)
+
         # enviar lectura de sensores a PC
         send_array = ard_rcv + touch_array
-        sock.sendall(struct.pack("iiiiiiiiiii", *send_array))
-        print("Enviando PC: ", send_array)
+        send_array_updated=send_array
+        send_array_updated[1]=send_array[6]
+        send_array_updated[2]=send_array[7]
+        send_array_updated[6]=0
+        send_array_updated[7]=0
+        send_array_updated[8]=0            
+ 
+        sock.sendall(struct.pack("iiiiiiiiiii", *send_array_updated))
+        print("Enviando PC: ", send_array_updated)
         
     if data_recv[0] == 1:
         ard_msg=posture_msg(data_recv[1])
