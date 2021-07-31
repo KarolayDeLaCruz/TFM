@@ -31,7 +31,7 @@ touch_array=[0,0,0,0,0,0,0,0]
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # Connect the socket to the port where the server is listening
-server_address = ('192.168.1.136', 8000)
+server_address = ('192.168.1.131', 8000)
 print('connecting to {} port {}'.format(*server_address))
 sock.connect(server_address)
 data_recv = [0,0]
@@ -44,7 +44,7 @@ def posture_msg (i):
             1: 'kbalance',
             2: 'kheadL',
             3: 'kheadR',
-            4: 'kstr',
+            4: 'ksleep',#kstr
             5: 'ksleep',
             6: 'ksleep' #kbuttUp
             }
@@ -55,18 +55,18 @@ def skill_msg (i):
             0: 'ksleep',
             1: 'kcr',
             2: 'kbk',
-            3: 'kbalanceUp',
+            3: 'kbalance', #kbalanceUp
             4: 'ksit',
-            5: 'kbalanceDown',
+            5: 'kbalance', #kbalanceDown
             6: 'kcr',
             7: 'khi2',
-            8: 'khunt',
+            8: 'ksleep', #khunt
             9: 'kcr',
-            10: 'kdropped',
+            10: 'ksleep', #dropped
             11: 'kstr',
             12: 'kbuttUp',
-            13: 'klay',
-            14: 'kheadlay',
+            13: 'kstr',#klay
+            14: 'ksit',#kheadlay
             15: '2',
             16: '3',
             17: 'kbuttUp',
