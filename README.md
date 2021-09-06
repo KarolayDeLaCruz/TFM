@@ -9,6 +9,6 @@
   - cabeza: 3 sensores táctiles colocados allí. 
 
 ## C++
--Se realizó ciertas modificaciones para su funcionamiento con las matrices de aprendizaje.
+- Se realizó ciertas modificaciones para su funcionamiento con las matrices de aprendizaje.
 ![image](https://user-images.githubusercontent.com/61216445/132249165-a00a9de7-127b-45d5-b66e-a7a73fcad98f.png)
--Un archivo .csv por cada comportamiento aprendido: explorar, atención, dormir y acicalarse.
+- Un archivo .csv por cada comportamiento aprendido: explorar, atención, dormir y acicalarse.
