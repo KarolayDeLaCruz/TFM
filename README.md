@@ -21,6 +21,6 @@
 - Contiene archivos .csv por cada comportamiento aprendido: explorar, atención, dormir y acicalarse.
 
 
-### Formulario pruebas
+## Formulario pruebas
 
 https://forms.gle/b3BQQ7Dd6h2PZFX36
