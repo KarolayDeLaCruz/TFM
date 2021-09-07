@@ -19,3 +19,7 @@
 
 ### Carpeta files
 - Contiene archivos .csv por cada comportamiento aprendido: explorar, atención, dormir y acicalarse.
+
+
+### Formulario
+
