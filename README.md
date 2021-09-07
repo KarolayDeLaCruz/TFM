@@ -6,7 +6,7 @@
   - ojos: 1 sensor ultrasónico.
   - orejas: 2 sensores táctiles colocados en cada una de las orejas.
   - lomo: 2 sensores táctiles colocados en los extremos del lomo.
-  - cabeza: 3 sensores táctiles colocados allí. 
+  - cabeza: 3 sensores táctiles colocados donde corresponde. 
 
 ## C++
 - Se realizó ciertas modificaciones para su funcionamiento con las matrices de aprendizaje.
